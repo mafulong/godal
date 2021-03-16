@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ['1.14', '1.15']
+    env:
+      GOFLAGS: -mod=readonly
+      GOPROXY: https://proxy.golang.org
+
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go }}
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Please
+        uses: sagikazarmark/setup-please-action@v0
+
+      - name: Test
+        run: |
+          plz test //...
+          plz gotest
+      - name: Upload coverage
+        uses: codecov/codecov-action@v1
+        if: always()
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: plz-out/log/coverage.txt
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    env:
+      GOFLAGS: -mod=readonly
+
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.15
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Please
+        uses: sagikazarmark/setup-please-action@v0
+
+      - name: Lint
+        run: plz lint
