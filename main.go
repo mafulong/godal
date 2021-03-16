@@ -1,24 +1,29 @@
 package main
 
 import (
-	"fmt"
-	"github.com/mafulong/godal/utils"
-	"github.com/mkideal/cli"
+	"github.com/mafulong/godal/gen"
+	"github.com/urfave/cli/v2" // imports as package "cli"
+	"log"
+	"os"
 )
 
-type CmdArgs struct {
-	cli.Helper
-	TableName   string   `cli:"*table_name" usage:"table_name"`
-	PrimaryKeys []string `cli:"*pk" usage:"primaryKey"`
+var commands = []*cli.Command{
+	gen.Command,
 }
 
-var CmdArgsIns CmdArgs
-
+func action(c *cli.Context) error {
+	return nil
+}
 func main() {
-	cli.Run(new(CmdArgs), func(ctx *cli.Context) error {
-		//ctx.JSONln(ctx.Argv())
-		args := ctx.Argv().(*CmdArgs)
-		fmt.Println(utils.ToJSON(args))
-		return nil
-	})
+	app := &cli.App{
+		Name:     "godal",
+		Usage:    "generate file",
+		Action:   action,
+		Commands: commands,
+	}
+
+	err := app.Run(os.Args)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
