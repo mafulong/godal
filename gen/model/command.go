@@ -1,8 +1,6 @@
 package model
 
 import (
-	"fmt"
-	"github.com/mafulong/godal/utils"
 	"github.com/urfave/cli/v2"
 )
 
@@ -19,8 +17,12 @@ var flags = []cli.Flag{
 
 func action(c *cli.Context) error {
 	args := c.Args()
-	fmt.Println(utils.ToJSON(args))
-	fmt.Println(c.StringSlice("abc"))
+	for i := 0;i<args.Len();i+=1{
+		err := gen(args.Get(i))
+		if err != nil {
+			return err
+		}
+	}
 	return nil
 }
 
