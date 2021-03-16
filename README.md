@@ -1,7 +1,44 @@
-# godal
-本repo提供了一种工具生成dal层，解决mysql的crud以及set, get等缓存操作，减少crud成本， 其中dal层作为与mysql、redis交互的一层
+godal 
+===
 
-## 依赖
+godal provides the ability to generate specific golang code.
+The godal is to enable developers to write fast code in an expressive way. 
+
+Functions:
+1. Generate orm model corresponding to golang by specifying sql ddl file, which can be used by gorm.
+2. Update later
+
+## Usage Documentation
+
+## Installation
+
+Using this package requires a working Go environment. [See the install instructions for Go](http://golang.org/doc/install.html).
+
+Go Modules are required when using this package. [See the go blog guide on using Go Modules](https://blog.golang.org/using-go-modules).
+
+How to install godal? 
 ```shell
-go get -u github.com/mkideal/cli
+git clone git@github.com:mafulong/godal.git
+cd godal
+go install
+```
+
+Make sure that you can have the result when call commend`which godal`
+
+## SQL to golang model
+```shell
+godal --database {databaseName} {sqlFile}
+```
+
+### Example
+You can enter the test directory in this repo. 
+```shell
+godal --database testdb gen_model.sql
+```
+
+you gen get new directory `model`, which have two go files. 
+
+file1: 
+```go
+
 ```
