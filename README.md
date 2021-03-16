@@ -23,20 +23,21 @@ cd godal
 go install
 ```
 
-Make sure that you can have the result when call commend`which godal`
+Make sure that you can have result when call commend`which godal`
 
 ## SQL to golang model
 ```shell
-godal --database {databaseName} {sqlFile}
+godal --database {your databaseName} {your sqlFile}
 ```
 
 ### Example
 You can enter the test directory in this repo. 
+
 ```shell
 godal --database testdb gen_model.sql
 ```
 
-You can get new directory `model`, and some go files, [example](https://github.com/mafulong/godal/test/model/)
+[What you can get?](https://github.com/mafulong/godal/test/model/)
 
 example file1: 
 ```go
