@@ -7,6 +7,44 @@ on:
     branches: [ main ]
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.15
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Lint Go Code
+        run: |
+          export PATH=$PATH:$(go env GOPATH)/bin # temporary fix. See https://github.com/actions/setup-go/issues/14
+          go get -u golang.org/x/lint/golint
+          make lint
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.15
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Unit tests.
+        run: make test-coverage
+
+      - name: Upload Coverage report to CodeCov
+        uses: codecov/codecov-action@v1.0.0
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: ./coverage.txt
 
   build:
     runs-on: ubuntu-latest
@@ -24,3 +62,21 @@ jobs:
 
       - name: Test
         run: go test -cover -v ./...
+  release:
+    name: Release on GitHub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Validates GO releaser config
+        uses: docker://goreleaser/goreleaser:latest
+        with:
+          args: check
+
+      - name: Create release on GitHub
+        uses: docker://goreleaser/goreleaser:latest
+        with:
+          args: release
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
