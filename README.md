@@ -1,3 +1,7 @@
+[![GoDoc](https://godoc.org/github.com/mafulong/godal?status.svg)](https://pkg.go.dev/github.com/mafulong/godal)
+[![Build Status](https://travis-ci.org/mafulong/godal.svg?branch=main)](https://travis-ci.org/mafulong/godal)
+[![Go Report Card](https://goreportcard.com/badge/github.com/mafulong/godal)](https://goreportcard.com/report/github.com/mafulong/godal)
+
 godal
 ===
 
