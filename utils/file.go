@@ -8,11 +8,6 @@ import (
 	"strings"
 )
 
-func IsExist(p string) bool {
-	_, err := os.Stat(p)
-	return os.IsExist(err)
-}
-
 func IsDirExists(dir string) bool {
 	stat, err := os.Stat(dir)
 	if err != nil {
@@ -46,6 +41,10 @@ func IsDirectory(p string) (bool, error) {
 		return false, err
 	}
 	return stat.IsDir(), nil
+}
+
+func CreateDir(dir string) {
+	_ = os.MkdirAll(dir, os.ModePerm)
 }
 
 func CopyFile(from string, to string) error {
@@ -110,6 +109,10 @@ func CopyDirectory(from string, to string) error {
 	return nil
 }
 func WriteToFile(filename string, data []byte) (err error) {
+	dir, _ := path.Split(filename)
+	if !IsFileExists(dir) {
+		CreateDir(dir)
+	}
 	if strings.HasSuffix(filename, ".sh") {
 		err = ioutil.WriteFile(filename, data, 0755)
 	} else {
@@ -126,7 +129,7 @@ func ReadFile(file string) (dataBytes []byte, err error) {
 	return content, nil
 }
 
-func GetPWD() (string) {
-	wd, _:= os.Getwd()
+func GetPWD() string {
+	wd, _ := os.Getwd()
 	return wd
 }

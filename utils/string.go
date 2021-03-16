@@ -6,8 +6,8 @@ import (
 	"unicode"
 )
 
-func ToFirstUpperCamel(name string) string {
-	pieces := strings.Split(name, "_")
+func ToCamelFirstUpper(str string) string {
+	pieces := strings.Split(str, "_")
 	newPieces := make([]string, 0, len(pieces))
 	for _, piece := range pieces {
 		newPieces = append(newPieces, strings.Title(piece))
@@ -16,8 +16,8 @@ func ToFirstUpperCamel(name string) string {
 }
 
 //首字母变小写的驼峰
-func ToFirstUpperLower(str string) string {
-	str = ToFirstUpperCamel(str)
+func ToCamelFirstLower(str string) string {
+	str = ToCamelFirstUpper(str)
 	for i, v := range str {
 		return string(unicode.ToLower(v)) + str[i+1:]
 	}

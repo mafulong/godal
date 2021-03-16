@@ -39,7 +39,7 @@ type Column struct {
 
 func (c Column) String() string {
 	s := fmt.Sprintf("%s %s `gorm:\"Column:%s\" json:\"%s\"`",
-		ToFirstUpperCamel(c.Name), c.Type, c.Name, c.Name)
+		ToCamelFirstUpper(c.Name), c.Type, c.Name, c.Name)
 	if c.Comment == "" {
 		return s
 	} else {
