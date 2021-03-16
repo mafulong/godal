@@ -2,7 +2,7 @@ godal
 ===
 
 godal provides the ability to generate specific golang code.
-The godal is to enable developers to write fast code in an expressive way. 
+The goal is to enable developers to write fast code in an expressive way. 
 
 Functions:
 1. Generate orm model corresponding to golang by specifying sql ddl file, which can be used by gorm.
