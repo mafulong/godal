@@ -37,9 +37,14 @@ func gen(file string) error {
 	if err != nil {
 		return err
 	}
+	pkg := "model"
+	if len(cmdArgs.Database) > 0 {
+		pkg = utils.ToSnakeCase(cmdArgs.Database)
+	}
 	for _, ddl := range ddls {
-		fp := path.Join(utils.GetPWD(), fmt.Sprintf("/model/%+v.go", ddl.NewName.Name))
-		err := utils.WriteToFile(fp, []byte(genTable("model", ddl)))
+		fp := getFilePath(ddl.NewName.Name.String())
+		log.Debug(fp)
+		err := utils.WriteToFile(fp, []byte(genTable(pkg, ddl)))
 		if err != nil {
 			log.Error(err)
 			return err
@@ -47,6 +52,14 @@ func gen(file string) error {
 		utils.GoFmt(fp)
 	}
 	return nil
+}
+
+func getFilePath(tableName string) string {
+	if len(cmdArgs.Database) > 0 {
+		return path.Join(utils.GetPWD(), fmt.Sprintf("/model/%+v/%+v.go", cmdArgs.Database, tableName))
+	} else {
+		return path.Join(utils.GetPWD(), fmt.Sprintf("/model/%+v.go", tableName))
+	}
 }
 
 func genTable(pkg string, ddl *sqlparser.DDL) string {
