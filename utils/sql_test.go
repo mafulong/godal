@@ -1,7 +1,6 @@
 package utils
 
 import (
-	"github.com/xwb1989/sqlparser"
 	"testing"
 )
 
@@ -42,22 +41,7 @@ func TestParseSQLs(t *testing.T) {
 	}
 }
 
-func Test_getComment(t *testing.T) {
-	type args struct {
-		c *sqlparser.ColumnDefinition
-	}
-	tests := []struct {
-		name string
-		args args
-		want string
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := getComment(tt.args.c); got != tt.want {
-				t.Errorf("getComment() = %v, want %v", got, tt.want)
-			}
-		})
-	}
+
+func TestColumn(t *testing.T) {
 }
+
