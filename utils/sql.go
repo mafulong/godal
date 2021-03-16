@@ -5,6 +5,7 @@ import (
 	"github.com/xwb1989/sqlparser"
 )
 
+// ParseSQLs
 func ParseSQLs(content string) ([]*sqlparser.DDL, error) {
 	pieces, err := sqlparser.SplitStatementToPieces(content)
 	if err != nil {
@@ -47,6 +48,7 @@ func (c Column) String() string {
 	}
 }
 
+//GenColumn
 func GenColumn(c *sqlparser.ColumnDefinition) string {
 	switch c.Type.Type {
 	case "bigint":

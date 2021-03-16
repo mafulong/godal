@@ -14,4 +14,6 @@ require (
 	github.com/urfave/cli/v2 v2.3.0
 	github.com/xwb1989/sqlparser v0.0.0-20180606152119-120387863bf2
 	github.com/zput/zxcTool v1.3.6
+	golang.org/x/lint v0.0.0-20201208152925-83fdc39ff7b5 // indirect
+	golang.org/x/tools v0.1.0 // indirect
 )
