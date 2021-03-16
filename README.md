@@ -36,7 +36,7 @@ You can enter the test directory in this repo.
 godal --database testdb gen_model.sql
 ```
 
-You gen get new directory `model`, and some go files, [you can see](https://github.com/mafulong/godal/tset/model/)
+You can get new directory `model`, and some go files, [example](https://github.com/mafulong/godal/test/model/)
 
 example file1: 
 ```go
