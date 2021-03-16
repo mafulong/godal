@@ -1,10 +1,11 @@
-godal 
+godal
 ===
 
-godal provides the ability to generate specific golang code.
-The goal is to enable developers to write fast code in an expressive way. 
+godal provides the ability to generate specific golang code. The goal is to enable developers to write fast code in an
+expressive way.
 
 Functions:
+
 1. Generate orm model corresponding to golang by specifying sql ddl file, which can be used by gorm.
 2. Update later
 
@@ -12,11 +13,14 @@ Functions:
 
 ## Installation
 
-Using this package requires a working Go environment. [See the install instructions for Go](http://golang.org/doc/install.html).
+Using this package requires a working Go
+environment. [See the install instructions for Go](http://golang.org/doc/install.html).
 
-Go Modules are required when using this package. [See the go blog guide on using Go Modules](https://blog.golang.org/using-go-modules).
+Go Modules are required when using this
+package. [See the go blog guide on using Go Modules](https://blog.golang.org/using-go-modules).
 
-How to install godal? 
+How to install godal?
+
 ```shell
 git clone git@github.com:mafulong/godal.git
 cd godal
@@ -26,12 +30,14 @@ go install
 Make sure that you can have result when call commend`which godal`
 
 ## SQL to golang model
+
 ```shell
 godal --database {your databaseName} {your sqlFile}
 ```
 
 ### Example
-You can enter the test directory in this repo. 
+
+You can enter the test directory in this repo.
 
 ```shell
 godal --database testdb gen_model.sql
@@ -39,7 +45,8 @@ godal --database testdb gen_model.sql
 
 [What you can get?](https://github.com/mafulong/godal/test/model/)
 
-example file1: 
+example file1:
+
 ```go
 package testdb
 

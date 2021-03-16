@@ -6,6 +6,7 @@ import (
 	"unicode"
 )
 
+//ToCamelFirstUpper
 func ToCamelFirstUpper(str string) string {
 	pieces := strings.Split(str, "_")
 	newPieces := make([]string, 0, len(pieces))
@@ -15,7 +16,7 @@ func ToCamelFirstUpper(str string) string {
 	return strings.Join(newPieces, "")
 }
 
-//首字母变小写的驼峰
+// ToCamelFirstLower 首字母变小写的驼峰
 func ToCamelFirstLower(str string) string {
 	str = ToCamelFirstUpper(str)
 	for i, v := range str {
@@ -24,7 +25,7 @@ func ToCamelFirstLower(str string) string {
 	return ""
 }
 
-//蛇形, 下划线分割
+// ToSnakeCase 蛇形, 下划线分割
 func ToSnakeCase(str string) string {
 	var matchFirstCap = regexp.MustCompile("(.)([A-Z][a-z]+)")
 	var matchAllCap = regexp.MustCompile("([a-z0-9])([A-Z])")

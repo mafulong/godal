@@ -8,6 +8,7 @@ import (
 	"strings"
 )
 
+//IsDirExists
 func IsDirExists(dir string) bool {
 	stat, err := os.Stat(dir)
 	if err != nil {
@@ -15,6 +16,7 @@ func IsDirExists(dir string) bool {
 	}
 	return stat.IsDir()
 }
+//IsFileExists
 func IsFileExists(path string) bool {
 	_, err := os.Stat(path) //os.Stat获取文件信息
 	if err != nil {
@@ -26,6 +28,7 @@ func IsFileExists(path string) bool {
 	return true
 }
 
+//RemoveDirectory
 func RemoveDirectory(dir string) error {
 	err := os.RemoveAll(dir)
 	if err != nil {
@@ -35,6 +38,7 @@ func RemoveDirectory(dir string) error {
 	}
 }
 
+//IsDirectory
 func IsDirectory(p string) (bool, error) {
 	stat, err := os.Stat(p)
 	if err != nil {
@@ -43,10 +47,12 @@ func IsDirectory(p string) (bool, error) {
 	return stat.IsDir(), nil
 }
 
+//CreateDir
 func CreateDir(dir string) {
 	_ = os.MkdirAll(dir, os.ModePerm)
 }
 
+//CopyFile
 func CopyFile(from string, to string) error {
 
 	fromFd, err := os.Open(from)
@@ -78,6 +84,7 @@ func CopyFile(from string, to string) error {
 	return os.Chmod(to, fromInfo.Mode())
 }
 
+//CopyDirectory
 func CopyDirectory(from string, to string) error {
 	fromInfo, err := os.Stat(from)
 	if err != nil {
@@ -108,6 +115,8 @@ func CopyDirectory(from string, to string) error {
 	}
 	return nil
 }
+
+//WriteToFile
 func WriteToFile(filename string, data []byte) (err error) {
 	dir, _ := path.Split(filename)
 	if !IsFileExists(dir) {
@@ -121,6 +130,7 @@ func WriteToFile(filename string, data []byte) (err error) {
 	return
 }
 
+//func ReadFile(file string) (dataBytes []byte, err error) {
 func ReadFile(file string) (dataBytes []byte, err error) {
 	content, err := ioutil.ReadFile(file)
 	if err != nil {
@@ -129,6 +139,7 @@ func ReadFile(file string) (dataBytes []byte, err error) {
 	return content, nil
 }
 
+//GetPWD, like pwd in linux
 func GetPWD() string {
 	wd, _ := os.Getwd()
 	return wd
