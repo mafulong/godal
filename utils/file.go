@@ -16,6 +16,7 @@ func IsDirExists(dir string) bool {
 	}
 	return stat.IsDir()
 }
+
 //IsFileExists
 func IsFileExists(path string) bool {
 	_, err := os.Stat(path) //os.Stat获取文件信息
