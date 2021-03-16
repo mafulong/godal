@@ -17,7 +17,7 @@ var flags = []cli.Flag{
 
 func action(c *cli.Context) error {
 	args := c.Args()
-	for i := 0;i<args.Len();i+=1{
+	for i := 0; i < args.Len(); i += 1 {
 		err := gen(args.Get(i))
 		if err != nil {
 			return err

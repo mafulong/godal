@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/mafulong/godal/utils"
+	log "github.com/sirupsen/logrus"
 	"github.com/xwb1989/sqlparser"
 	"io/ioutil"
 	"path"
@@ -26,8 +27,10 @@ func ({{.TableName}}) TableName() string {
 `
 
 func gen(file string) error {
+	log.Info("gen file: ", file)
 	content, err := ioutil.ReadFile(file)
 	if err != nil {
+		log.Error(err)
 		return err
 	}
 	ddls, err := utils.ParseSQLs(string(content))
@@ -38,9 +41,9 @@ func gen(file string) error {
 		fp := path.Join(utils.GetPWD(), fmt.Sprintf("/model/%+v.go", ddl.NewName.Name))
 		err := utils.WriteToFile(fp, []byte(genTable("model", ddl)))
 		if err != nil {
+			log.Error(err)
 			return err
 		}
-		fmt.Println(fp)
 		utils.GoFmt(fp)
 	}
 	return nil
@@ -48,7 +51,7 @@ func gen(file string) error {
 
 func genTable(pkg string, ddl *sqlparser.DDL) string {
 	var imports string
-	if needTime(ddl) {
+	if needTimeImport(ddl) {
 		imports = `import "time"` + "\n"
 	}
 
@@ -79,12 +82,16 @@ func genTable(pkg string, ddl *sqlparser.DDL) string {
 	}
 
 	var buf bytes.Buffer
-	template.Must(template.New("header").Parse(tableTemplate)).Execute(&buf, params)
+	err := template.Must(template.New("header").Parse(tableTemplate)).Execute(&buf, params)
+	if err != nil {
+		log.Error(err)
+		return ""
+	}
 
 	return buf.String()
 }
 
-func needTime(ddl *sqlparser.DDL) bool {
+func needTimeImport(ddl *sqlparser.DDL) bool {
 	for _, c := range ddl.TableSpec.Columns {
 		switch c.Type.Type {
 		case "date", "datetime", "timestamp":
