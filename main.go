@@ -1,23 +1,24 @@
 package main
 
 import (
+	"fmt"
+	"github.com/mafulong/godal/utils"
 	"github.com/mkideal/cli"
-	"os"
 )
 
 type CmdArgs struct {
-	// []bool, []int, []float32, ... supported too.
-	PrimaryKeys []string `cli:"pk" usage:"[required, array]primaryKey"`
-	TableName string `cli:"table_name" usage:"[required, string]table_name"`
+	cli.Helper
+	TableName   string   `cli:"*table_name" usage:"table_name"`
+	PrimaryKeys []string `cli:"*pk" usage:"primaryKey"`
 }
 
 var CmdArgsIns CmdArgs
 
 func main() {
-	os.Exit(cli.Run(new(CmdArgs), func(ctx *cli.Context) error {
-		ctx.JSONln(ctx.Argv())
+	cli.Run(new(CmdArgs), func(ctx *cli.Context) error {
+		//ctx.JSONln(ctx.Argv())
 		args := ctx.Argv().(*CmdArgs)
-		//utils.ToJSON(args)
+		fmt.Println(utils.ToJSON(args))
 		return nil
-	}))
+	})
 }
