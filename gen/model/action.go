@@ -57,9 +57,8 @@ func gen(file string) error {
 func getFilePath(tableName string) string {
 	if len(cmdArgs.Database) > 0 {
 		return path.Join(utils.GetPWD(), fmt.Sprintf("/model/%+v/%+v.go", cmdArgs.Database, tableName))
-	} else {
-		return path.Join(utils.GetPWD(), fmt.Sprintf("/model/%+v.go", tableName))
 	}
+	return path.Join(utils.GetPWD(), fmt.Sprintf("/model/%+v.go", tableName))
 }
 
 func genTable(pkg string, ddl *sqlparser.DDL) string {

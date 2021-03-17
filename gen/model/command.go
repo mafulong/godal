@@ -15,6 +15,7 @@ var flags = []cli.Flag{
 	},
 }
 
+// Args cms args
 type Args struct {
 	Database string
 }
@@ -26,7 +27,7 @@ func action(c *cli.Context) error {
 	if len(c.String(keyDatabase)) > 0 {
 		cmdArgs.Database = c.String(keyDatabase)
 	}
-	for i := 0; i < args.Len(); i += 1 {
+	for i := 0; i < args.Len(); i ++{
 		err := gen(args.Get(i))
 		if err != nil {
 			return err
@@ -35,6 +36,7 @@ func action(c *cli.Context) error {
 	return nil
 }
 
+// Command for cmd
 var Command = &cli.Command{
 	Name:      "model",
 	Usage:     "generate model directory",

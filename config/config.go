@@ -1,6 +1,6 @@
 package config
 
-//config
+// Config eg logOut
 type Config struct {
 	LogStdOut bool
 }
@@ -9,7 +9,7 @@ var config = &Config{
 	LogStdOut: false,
 }
 
-//init
+// Init config init
 func Init() {
 	logInit()
 }
