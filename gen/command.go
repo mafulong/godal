@@ -13,7 +13,7 @@ func action(_ *cli.Context) error {
 	return nil
 }
 
-//gen command
+// Command gen command
 var Command = &cli.Command{
 	Name:        "gen",
 	Usage:       "generators",

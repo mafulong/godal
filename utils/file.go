@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-//IsDirExists
+// IsDirExists IsDirExists
 func IsDirExists(dir string) bool {
 	stat, err := os.Stat(dir)
 	if err != nil {
@@ -17,7 +17,7 @@ func IsDirExists(dir string) bool {
 	return stat.IsDir()
 }
 
-//IsFileExists
+// IsFileExists IsFileExists
 func IsFileExists(path string) bool {
 	_, err := os.Stat(path) //os.Stat获取文件信息
 	if err != nil {
@@ -29,7 +29,7 @@ func IsFileExists(path string) bool {
 	return true
 }
 
-//RemoveDirectory
+// RemoveDirectory
 func RemoveDirectory(dir string) error {
 	err := os.RemoveAll(dir)
 	if err != nil {
