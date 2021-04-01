@@ -3,13 +3,14 @@ package model
 import (
 	"bytes"
 	"fmt"
-	"github.com/mafulong/godal/utils"
-	log "github.com/sirupsen/logrus"
-	"github.com/xwb1989/sqlparser"
 	"io/ioutil"
 	"path"
 	"strings"
 	"text/template"
+
+	"github.com/mafulong/godal/utils"
+	log "github.com/sirupsen/logrus"
+	"github.com/xwb1989/sqlparser"
 )
 
 const tableTemplate = `
@@ -68,7 +69,7 @@ func genTable(pkg string, ddl *sqlparser.DDL) string {
 	}
 
 	tableNameStr := ddl.NewName.Name.String()
-	tableName := utils.ToCamelFirstLower(tableNameStr)
+	tableName := utils.ToCamelFirstUpper(tableNameStr)
 
 	var columns strings.Builder
 	for i, c := range genColumns(ddl) {
