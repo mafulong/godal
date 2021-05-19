@@ -37,7 +37,7 @@ Make sure that you can have result when call commend`which godal`
 ## SQL to golang model
 
 ```shell
-godal --database {your databaseName} {your sqlFile}
+godal gen model --database {your databaseName} {your sqlFile}
 ```
 
 ### Example
@@ -45,7 +45,7 @@ godal --database {your databaseName} {your sqlFile}
 You can enter the test directory in this repo.
 
 ```shell
-godal --database testdb gen_model.sql
+godal gen model --database testdb gen_model.sql
 ```
 
 [What you can get?](https://github.com/mafulong/godal/test/model/)
