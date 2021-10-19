@@ -41,7 +41,5 @@ func TestParseSQLs(t *testing.T) {
 	}
 }
 
-
 func TestColumn(t *testing.T) {
 }
-
