@@ -27,7 +27,7 @@ func action(c *cli.Context) error {
 	if len(c.String(keyDatabase)) > 0 {
 		cmdArgs.Database = c.String(keyDatabase)
 	}
-	for i := 0; i < args.Len(); i ++{
+	for i := 0; i < args.Len(); i++ {
 		err := gen(args.Get(i))
 		if err != nil {
 			return err

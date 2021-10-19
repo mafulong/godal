@@ -71,7 +71,7 @@ func GenColumn(c *sqlparser.ColumnDefinition) string {
 }
 
 func getComment(c *sqlparser.ColumnDefinition) string {
-	if c == nil{
+	if c == nil {
 		return ""
 	}
 	if c.Type.Comment == nil {
