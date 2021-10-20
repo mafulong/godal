@@ -2,6 +2,7 @@ package model
 
 import "time"
 
+//TestTb2
 type TestTb2 struct {
 	TestId         int       `gorm:"Column:test_id" json:"test_id"`
 	TestTitle      string    `gorm:"Column:test_title" json:"test_title"`
@@ -9,6 +10,7 @@ type TestTb2 struct {
 	SubmissionDate time.Time `gorm:"Column:submission_date" json:"submission_date"`
 }
 
+//TableName
 func (TestTb2) TableName() string {
 	return "test_tb2"
 }
