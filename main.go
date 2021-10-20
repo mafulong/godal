@@ -15,7 +15,7 @@ func action(c *cli.Context) error {
 	return nil
 }
 
-var App = &cli.App{
+var app = &cli.App{
 	Name:     "godal",
 	Usage:    "generate file",
 	Action:   action,
@@ -23,7 +23,7 @@ var App = &cli.App{
 }
 
 func main() {
-	err := App.Run(os.Args)
+	err := app.Run(os.Args)
 	if err != nil {
 		log.Fatal(err)
 	}
