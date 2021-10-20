@@ -7,7 +7,6 @@ import (
 	"testing"
 
 	"github.com/mafulong/go_utils"
-	"github.com/mafulong/godal/config"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -32,7 +31,6 @@ func TestGenName(t *testing.T) {
 }
 
 func Test_gen(t *testing.T) {
-	config.Init()
 	log.Info("test")
 	//t.Log(path.Join(go_utils.GetPWD(), "../../test/gen_model.sql"))
 	err := gen(path.Join(go_utils.GetPWD(), "../../test/gen_model.sql"))
