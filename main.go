@@ -22,9 +22,15 @@ var app = &cli.App{
 	Commands: commands,
 }
 
-func main() {
-	err := app.Run(os.Args)
+func run(args []string) error {
+	err := app.Run(args)
 	if err != nil {
 		log.Fatal(err)
+		return err
 	}
+	return nil
+}
+
+func main() {
+	_ = run(os.Args)
 }
