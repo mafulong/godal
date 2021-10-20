@@ -2,7 +2,7 @@ package model
 
 import "time"
 
-//TestTb1
+//TestTb1 corrsponds to test_tb1
 type TestTb1 struct {
 	TestId         int       `gorm:"Column:test_id" json:"test_id"`
 	TestTitle      string    `gorm:"Column:test_title" json:"test_title"`
@@ -10,7 +10,7 @@ type TestTb1 struct {
 	SubmissionDate time.Time `gorm:"Column:submission_date" json:"submission_date"`
 }
 
-//TableName
+//TableName func
 func (TestTb1) TableName() string {
 	return "test_tb1"
 }
