@@ -2,12 +2,13 @@ package config
 
 import (
 	"fmt"
-	nested "github.com/antonfisher/nested-logrus-formatter"
-	log "github.com/sirupsen/logrus"
-	"github.com/zput/zxcTool/ztLog/zt_formatter"
 	"os"
 	"path"
 	"runtime"
+
+	nested "github.com/antonfisher/nested-logrus-formatter"
+	log "github.com/sirupsen/logrus"
+	"github.com/zput/zxcTool/ztLog/zt_formatter"
 )
 
 func logInit() {
@@ -36,11 +37,7 @@ func logInit() {
 	if stdout {
 		log.SetOutput(os.Stdout)
 	} else {
-		file, err := os.OpenFile("/tmp/godal.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
-		if err == nil {
-			log.SetOutput(file)
-		} else {
-			log.Info("Failed to log to file, using default stderr")
-		}
+		file, _ := os.OpenFile("/tmp/godal.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+		log.SetOutput(file)
 	}
 }
