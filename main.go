@@ -14,15 +14,16 @@ var commands = []*cli.Command{
 func action(c *cli.Context) error {
 	return nil
 }
-func main() {
-	app := &cli.App{
-		Name:     "godal",
-		Usage:    "generate file",
-		Action:   action,
-		Commands: commands,
-	}
 
-	err := app.Run(os.Args)
+var App = &cli.App{
+	Name:     "godal",
+	Usage:    "generate file",
+	Action:   action,
+	Commands: commands,
+}
+
+func main() {
+	err := App.Run(os.Args)
 	if err != nil {
 		log.Fatal(err)
 	}
