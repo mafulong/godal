@@ -20,7 +20,8 @@ test: ## Run unittests
 	@go test -short ${PKG_LIST}
 
 test-coverage: ## Run tests with coverage
-	@go test -cover -short -coverprofile coverage.txt ${PKG_LIST}
+	@echo ${PKG_LIST}
+	@go test -cover -coverprofile=coverage.txt -coverpkg="./..." ./...
 
 build: dep ## Build the binary file
 	@go build -i -o build/main $(PKG)
