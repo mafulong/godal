@@ -9,14 +9,12 @@ var subCommands = []*cli.Command{
 	model.Command,
 }
 
-func action(_ *cli.Context) error {
-	return nil
-}
-
 // Command gen command
 var Command = &cli.Command{
-	Name:        "gen",
-	Usage:       "generators",
-	Action:      action,
+	Name:  "gen",
+	Usage: "generators",
+	Action: func(context *cli.Context) error {
+		return nil
+	},
 	Subcommands: subCommands,
 }

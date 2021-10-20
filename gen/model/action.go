@@ -95,11 +95,7 @@ func genTable(pkg string, ddl *sqlparser.DDL) string {
 	}
 
 	var buf bytes.Buffer
-	err := template.Must(template.New("header").Parse(tableTemplate)).Execute(&buf, params)
-	if err != nil {
-		log.Error(err)
-		return ""
-	}
+	_ = template.Must(template.New("header").Parse(tableTemplate)).Execute(&buf, params)
 
 	return buf.String()
 }
