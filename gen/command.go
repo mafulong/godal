@@ -11,10 +11,7 @@ var subCommands = []*cli.Command{
 
 // Command gen command
 var Command = &cli.Command{
-	Name:  "gen",
-	Usage: "generators",
-	Action: func(context *cli.Context) error {
-		return nil
-	},
+	Name:        "gen",
+	Usage:       "generators",
 	Subcommands: subCommands,
 }
