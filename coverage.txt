@@ -1,4 +1,9 @@
 mode: set
+github.com/mafulong/godal/config/log.go:14.16,17.61 1 1
+github.com/mafulong/godal/config/log.go:27.2,37.12 5 1
+github.com/mafulong/godal/config/log.go:17.61,21.4 2 0
+github.com/mafulong/godal/config/log.go:37.12,39.3 1 0
+github.com/mafulong/godal/config/log.go:39.8,42.3 2 1
 github.com/mafulong/godal/gen/model/action.go:30.29,33.16 3 0
 github.com/mafulong/godal/gen/model/action.go:37.2,38.16 2 0
 github.com/mafulong/godal/gen/model/action.go:41.2,42.31 2 0
@@ -42,11 +47,6 @@ github.com/mafulong/godal/main.go:34.13,36.2 1 0
 github.com/mafulong/godal/test/model/test_tb1.go:14.35,16.2 1 0
 github.com/mafulong/godal/test/model/test_tb2.go:14.35,16.2 1 0
 github.com/mafulong/godal/config/config.go:12.13,14.2 1 1
-github.com/mafulong/godal/config/log.go:14.16,17.61 1 1
-github.com/mafulong/godal/config/log.go:27.2,37.12 5 1
-github.com/mafulong/godal/config/log.go:17.61,21.4 2 0
-github.com/mafulong/godal/config/log.go:37.12,39.3 1 0
-github.com/mafulong/godal/config/log.go:39.8,42.3 2 1
 github.com/mafulong/godal/config/log.go:14.16,17.61 1 1
 github.com/mafulong/godal/config/log.go:27.2,37.12 5 1
 github.com/mafulong/godal/config/log.go:17.61,21.4 2 1
