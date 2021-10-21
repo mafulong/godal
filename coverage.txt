@@ -1,4 +1,5 @@
 mode: set
+github.com/mafulong/godal/config/config.go:12.13,14.2 1 1
 github.com/mafulong/godal/config/log.go:14.16,17.61 1 1
 github.com/mafulong/godal/config/log.go:27.2,37.12 5 1
 github.com/mafulong/godal/config/log.go:17.61,21.4 2 0
@@ -38,12 +39,7 @@ github.com/mafulong/godal/gen/model/command.go:36.2,36.12 1 0
 github.com/mafulong/godal/gen/model/command.go:27.36,29.3 1 0
 github.com/mafulong/godal/gen/model/command.go:30.34,32.17 2 0
 github.com/mafulong/godal/gen/model/command.go:32.17,34.4 1 0
-github.com/mafulong/godal/gen/command.go:16.43,18.3 1 0
-github.com/mafulong/godal/main.go:14.35,16.2 1 0
-github.com/mafulong/godal/main.go:25.31,27.16 2 0
-github.com/mafulong/godal/main.go:31.2,31.12 1 0
-github.com/mafulong/godal/main.go:27.16,30.3 2 0
-github.com/mafulong/godal/main.go:34.13,36.2 1 0
+github.com/mafulong/godal/main.go:19.13,21.2 1 0
 github.com/mafulong/godal/test/model/test_tb1.go:14.35,16.2 1 0
 github.com/mafulong/godal/test/model/test_tb2.go:14.35,16.2 1 0
 github.com/mafulong/godal/config/config.go:12.13,14.2 1 1
@@ -54,11 +50,7 @@ github.com/mafulong/godal/config/log.go:37.12,39.3 1 0
 github.com/mafulong/godal/config/log.go:39.8,42.3 2 1
 github.com/mafulong/godal/test/model/test_tb1.go:14.35,16.2 1 0
 github.com/mafulong/godal/test/model/test_tb2.go:14.35,16.2 1 0
-github.com/mafulong/godal/main.go:14.35,16.2 1 0
-github.com/mafulong/godal/main.go:25.31,27.16 2 1
-github.com/mafulong/godal/main.go:31.2,31.12 1 1
-github.com/mafulong/godal/main.go:27.16,30.3 2 0
-github.com/mafulong/godal/main.go:34.13,36.2 1 0
+github.com/mafulong/godal/main.go:19.13,21.2 1 0
 github.com/mafulong/godal/gen/model/action.go:30.29,33.16 3 1
 github.com/mafulong/godal/gen/model/action.go:37.2,38.16 2 1
 github.com/mafulong/godal/gen/model/action.go:41.2,42.31 2 1
@@ -93,5 +85,3 @@ github.com/mafulong/godal/gen/model/command.go:36.2,36.12 1 1
 github.com/mafulong/godal/gen/model/command.go:27.36,29.3 1 1
 github.com/mafulong/godal/gen/model/command.go:30.34,32.17 2 1
 github.com/mafulong/godal/gen/model/command.go:32.17,34.4 1 0
-github.com/mafulong/godal/gen/command.go:16.43,18.3 1 0
-github.com/mafulong/godal/config/config.go:12.13,14.2 1 1

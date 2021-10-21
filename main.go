@@ -11,11 +11,8 @@ var commands = []*cli.Command{
 }
 
 var app = &cli.App{
-	Name:  "godal",
-	Usage: "generate file",
-	Action: func(context *cli.Context) error {
-		return nil
-	},
+	Name:     "godal",
+	Usage:    "generate file",
 	Commands: commands,
 }
 
