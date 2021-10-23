@@ -3,9 +3,10 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/mafulong/godal)](https://goreportcard.com/report/github.com/mafulong/godal)
 [![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go)
 
-[comment]: <> ([![Build Status]&#40;https://travis-ci.org/mafulong/godal.svg?branch=main&#41;]&#40;https://travis-ci.org/mafulong/godal&#41;)
 godal
 ===
+
+[English](README.md) | [中文](README_CN.md) 
 
 godal provides the ability to generate specific golang code. The goal is to enable developers to write fast code in an
 expressive way.
