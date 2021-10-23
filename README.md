@@ -1,6 +1,7 @@
 [![GoDoc](https://godoc.org/github.com/mafulong/godal?status.svg)](https://pkg.go.dev/github.com/mafulong/godal)
 [![Codecov.io](https://codecov.io/github/mafulong/godal/coverage.svg?branch=main)](https://codecov.io/github/mafulong/godal?branch=main)
 [![Go Report Card](https://goreportcard.com/badge/github.com/mafulong/godal)](https://goreportcard.com/report/github.com/mafulong/godal)
+[![Awesome](https://github.com/sindresorhus/awesome)]
 
 [comment]: <> ([![Build Status]&#40;https://travis-ci.org/mafulong/godal.svg?branch=main&#41;]&#40;https://travis-ci.org/mafulong/godal&#41;)
 godal
@@ -14,6 +15,7 @@ Functions:
 1. Generate orm model corresponding to golang by specifying sql ddl file, which can be used by gorm.
 2. Update later
 
+godal has been added to [awesome-go](https://awesome-go.com/), [MR link](https://github.com/avelino/awesome-go/pull/3857/)
 ## Usage Documentation
 
 ## Installation
