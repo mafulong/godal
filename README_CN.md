@@ -8,26 +8,21 @@ godal
 
 [English](README.md) | [中文](README_CN.md) 
 
-godal provides the ability to generate specific golang code. The goal is to enable developers to write fast code in an
-expressive way.
+godal 提供了生成 Golang 代码的能力， 旨在提高研发编码的效率。
 
-Functions:
+功能：
 
-1. Generate orm model corresponding to golang by specifying sql ddl file, which can be used by gorm.
-2. Update later
+1. 基于 Mysql 的建表语句快速生成对应 Golang 的 Model，可直接被 ORM 框架 GORM 使用。
+2. 待更新，欢迎大家提需求，会尽快适配。
 
-godal has been added to [awesome-go](https://awesome-go.com/), [MR link](https://github.com/avelino/awesome-go/pull/3857/)
-## Usage Documentation
+godal 已经被加入到 [awesome-go](https://awesome-go.com/), [MR link](https://github.com/avelino/awesome-go/pull/3857/)
+## 使用教程
 
-## Installation
+## 安装 godal
 
-Using this package requires a working Go
-environment. [See the install instructions for Go](http://golang.org/doc/install.html).
+首先需要golang环境 [See the install instructions for Go](http://golang.org/doc/install.html). [See the go blog guide on using Go Modules](https://blog.golang.org/using-go-modules).
 
-Go Modules are required when using this
-package. [See the go blog guide on using Go Modules](https://blog.golang.org/using-go-modules).
-
-How to install godal?
+git clone 后 进行 go install
 
 ```shell
 git clone git@github.com:mafulong/godal.git
@@ -35,17 +30,17 @@ cd godal
 go install
 ```
 
-Make sure that you can have result when call commend`which godal`
+可以使用命令`which godal` 检验是否已安装
 
-## SQL to golang model
+## SQL 生成 Model
 
 ```shell
 godal gen model --database {your databaseName} {your sqlFile}
 ```
 
-### Example
+### 例子
 
-You can enter the test directory in this repo.
+在本 repo 的 test 文件夹中有个测试 sql, 可以进行用来测试
 
 ```shell
 godal gen model --database testdb gen_model.sql
