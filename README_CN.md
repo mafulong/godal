@@ -8,7 +8,7 @@ godal
 
 [English](README.md) | [中文](README_CN.md) 
 
-godal 提供了生成 Golang 代码的能力， 旨在提高研发编码的效率。
+godal 提供了生成特定 Golang 代码的能力， 旨在提高研发编码的效率。
 
 功能：
 
